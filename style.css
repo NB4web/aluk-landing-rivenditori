@@ -445,31 +445,6 @@ h4,
     }
 }
 
-/* ======= TOOL LIST ======= */
-.tool-list {
-    list-style: none;
-    padding: 0;
-}
-
-.tool-list li {
-    position: relative;
-    padding: .9rem 0 .9rem 2rem;
-    font-size: 1.05rem;
-    color: var(--text);
-    border-bottom: 1px solid var(--border);
-}
-
-.tool-list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--red);
-}
 
 /* ======= STATS ======= */
 .stats-row {
@@ -803,13 +778,15 @@ h4,
 }
 
 .tool-list li::before {
-    content: '\2192';
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
     margin-right: 1.25rem;
-    color: var(--gray);
-    opacity: .4;
-    transform: translateX(-6px);
+    flex-shrink: 0;
     transition: all .3s var(--ease);
-    font-size: 1.2rem;
 }
 
 .tool-list li:hover {
