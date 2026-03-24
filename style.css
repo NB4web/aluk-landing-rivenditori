@@ -445,6 +445,32 @@ h4,
     }
 }
 
+/* ======= TOOL LIST ======= */
+.tool-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tool-list li {
+    position: relative;
+    padding: .9rem 0 .9rem 2rem;
+    font-size: 1.05rem;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+.tool-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+}
+
 /* ======= STATS ======= */
 .stats-row {
     display: flex;
