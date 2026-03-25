@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ─── 10. TEXTAREA CHAR COUNT ─── */
-    const ta = document.getElementById('racconto');
+    const ta = document.getElementById('messaggio');
     const cc = document.querySelector('.char-count');
     if (ta && cc) {
         ta.addEventListener('input', () => {
