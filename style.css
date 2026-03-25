@@ -396,7 +396,7 @@ h4,
 
 @media(max-width:768px) {
     .hero-img {
-        object-position: center center;
+        object-position: 81% 50%;
     }
 }
 
