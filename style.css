@@ -151,7 +151,7 @@ h4,
 }
 
 .hero-title {
-    font-size: clamp(3.2rem, 6.5vw, 6rem);
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
     font-weight: 800;
     text-transform: uppercase;
     line-height: 1.15;
