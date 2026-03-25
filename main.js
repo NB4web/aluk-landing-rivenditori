@@ -154,4 +154,19 @@ document.addEventListener('DOMContentLoaded', () => {
             cc.textContent = `${ta.value.length}/800`;
         });
     }
+    /* ─── 11. GOOGLE SHEETS INTEGRATION ─── */
+    const alukForm = document.getElementById('alukForm');
+    if (alukForm) {
+        alukForm.addEventListener('submit', () => {
+            const fd = new FormData(alukForm);
+            const data = {};
+            fd.forEach((val, key) => { data[key] = val; });
+            fetch('https://script.google.com/macros/s/AKfycbyZJPUx6BP-e418O_tgkDj3ZGUg9wMsnyyFW598b_bfqLlJBPOvnJWsPYio-iVYDshOhQ/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+        });
+    }
 });
