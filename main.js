@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch('https://script.google.com/macros/s/AKfycbyZJPUx6BP-e418O_tgkDj3ZGUg9wMsnyyFW598b_bfqLlJBPOvnJWsPYio-iVYDshOhQ/exec', {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'text/plain' },
                 body: JSON.stringify(data)
             });
         });
