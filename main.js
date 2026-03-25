@@ -161,12 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const fd = new FormData(alukForm);
             const data = {};
             fd.forEach((val, key) => { data[key] = val; });
-            fetch('https://script.google.com/macros/s/AKfycbyZJPUx6BP-e418O_tgkDj3ZGUg9wMsnyyFW598b_bfqLlJBPOvnJWsPYio-iVYDshOhQ/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'text/plain' },
-                body: JSON.stringify(data)
-            });
+            const blob = new Blob([JSON.stringify(data)], { type: 'text/plain' });
+            navigator.sendBeacon('https://script.google.com/macros/s/AKfycbyZJPUx6BP-e418O_tgkDj3ZGUg9wMsnyyFW598b_bfqLlJBPOvnJWsPYio-iVYDshOhQ/exec', blob);
         });
     }
 });
