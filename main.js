@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = {};
             fd.forEach((val, key) => { data[key] = val; });
             const blob = new Blob([JSON.stringify(data)], { type: 'text/plain' });
-            navigator.sendBeacon('https://script.google.com/macros/s/AKfycbyZJPUx6BP-e418O_tgkDj3ZGUg9wMsnyyFW598b_bfqLlJBPOvnJWsPYio-iVYDshOhQ/exec', blob);
+            navigator.sendBeacon('https://script.google.com/macros/s/AKfycbzrpl56VMEsak7Wf0Nk6lE0nzepk-9M14RtA-oe9FKmD0l4JUbvAhjmMxi3IgQ02hErOg/exec', blob);
         });
     }
 });
