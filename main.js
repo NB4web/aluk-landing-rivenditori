@@ -154,15 +154,23 @@ document.addEventListener('DOMContentLoaded', () => {
             cc.textContent = `${ta.value.length}/800`;
         });
     }
-    /* ─── 11. GOOGLE SHEETS INTEGRATION ─── */
+    /* ─── 11. GOOGLE SHEETS + MAKE.COM INTEGRATION ─── */
     const alukForm = document.getElementById('alukForm');
     if (alukForm) {
         alukForm.addEventListener('submit', () => {
             const fd = new FormData(alukForm);
             const data = {};
             fd.forEach((val, key) => { data[key] = val; });
+
+            // 1. Google Sheets (existing)
             const blob = new Blob([JSON.stringify(data)], { type: 'text/plain' });
             navigator.sendBeacon('https://script.google.com/macros/s/AKfycbzrpl56VMEsak7Wf0Nk6lE0nzepk-9M14RtA-oe9FKmD0l4JUbvAhjmMxi3IgQ02hErOg/exec', blob);
+
+            // 2. Make.com → LeadWin CRM
+            navigator.sendBeacon(
+                'https://hook.eu2.make.com/fwvihtv3qhoe10lekjdhd7pl73e0zn5d',
+                new Blob([JSON.stringify(data)], { type: 'application/json' })
+            );
         });
     }
 });
