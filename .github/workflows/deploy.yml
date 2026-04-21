@@ -11,12 +11,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: 86.107.33.45
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          server-dir: /public_html/rivenditore/
-          protocol: ftp
+      - name: Deploy via LFTP
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+          lftp -c "set ftp:ssl-allow no; set ftp:list-options -a; open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ftp.partneraluk.it; mirror -Rnv ./ /public_html/rivenditore/ --ignore-time --parallel=2 --exclude .git/ --exclude .github/"
