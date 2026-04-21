@@ -1,4 +1,4 @@
-$ftpRequest = [System.Net.FtpWebRequest]::Create('ftp://86.107.36.49/')
+$ftpRequest = [System.Net.FtpWebRequest]::Create('ftp://86.107.33.45/')
 $ftpRequest.Credentials = New-Object System.Net.NetworkCredential('mpartnez', 'WekeetPagfudyiarf5')
 $ftpRequest.Method = [System.Net.WebRequestMethods+Ftp]::ListDirectory
 try {
