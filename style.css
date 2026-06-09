@@ -1050,15 +1050,17 @@ h4,
     text-decoration: underline;
 }
 
-/* Form submit button on light bg — dark button */
-.form-card .btn-white {
-    background: var(--black);
+/* Form submit button — AluK red */
+.btn-red {
+    background: var(--red);
     color: var(--white);
+    border: none;
 }
 
-.form-card .btn-white:hover {
-    background: #222;
-    box-shadow: 0 14px 40px rgba(0, 0, 0, .18);
+.btn-red:hover {
+    background: #b8000b;
+    box-shadow: 0 14px 40px rgba(217, 0, 13, .25);
+    transform: translateY(-2px);
 }
 
 /* ======= FOOTER ======= */
