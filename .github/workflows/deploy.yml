@@ -15,4 +15,4 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
-          lftp -c "set ftp:ssl-allow no; set ftp:list-options -a; open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ftp.partneraluk.it; mirror -Rnv ./ /public_html/rivenditore/ --ignore-time --parallel=2 --exclude .git/ --exclude .github/"
+          lftp -c "set ftp:ssl-allow no; set ftp:list-options -a; open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} 86.107.36.49; mirror -Rnv ./ /public_html/rivenditore/ --ignore-time --parallel=2 --exclude .git/ --exclude .github/"
